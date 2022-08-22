@@ -1,11 +1,10 @@
 const fs = require('fs')
 
+const getRandomNumber = (listOfPath) => Math.floor(Math.random() * listOfPath.length)
+
 function getPathToRandomImage() {
-    const randomNumber = Math.floor(Math.random() * 10);
-    const listOfImage = fs.readdirSync('./img');
-    const randomCat = `img/${listOfImage[randomNumber]}`;
-    
-    return randomCat
+    const listOfImage = fs.readdirSync("./img"); 
+    return `img/${listOfImage[getRandomNumber(listOfImage)]}`
 }
 
 module.exports = { getPathToRandomImage }
