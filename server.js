@@ -10,7 +10,7 @@ app.use(cors({
 	origin: '*'
 }));
 
-app.get('/random-image', (req, res) => res.sendFile(path.join(__dirname, getPathToRandomImage())))
+app.get('/api/randomimage ', (req, res) => res.sendFile(path.join(__dirname, getPathToRandomImage())))
 
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`)
